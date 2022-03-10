@@ -7,7 +7,7 @@ API 구현 과제
 3. [상세](#상세)
 
 ### 과제
-<img src="img/img_001.png" width="400" height="240"></br>
+<img src="img/img_001.png" width="600" height="330"></br>
 
 ##### [목차로 이동](#목차)
 
@@ -15,14 +15,14 @@ API 구현 과제
 GET, POST 두 가지 API를 제공하며 유효하지 않은 데이터 입력 시 예외를 뱉어내도록 구현했다.
 
 #### 유효한 경우
-<img src="img/img_004.png" width="400" height="240"></br>
+<img src="img/img_004.png" width="600" height="330"></br>
 
-<img src="img/img_005.png" width="400" height="240"></br>
+<img src="img/img_005.png" width="600" height="330"></br>
 
 #### 유효하지 않은 경우
-<img src="img/img_002.png" width="400" height="240"></br>
+<img src="img/img_002.png" width="600" height="330"></br>
 
-<img src="img/img_003.png" width="400" height="240"></br>
+<img src="img/img_003.png" width="600" height="330"></br>
 
 ##### [목차로 이동](#목차)
 
@@ -41,8 +41,8 @@ GET, POST 두 가지 API를 제공하며 유효하지 않은 데이터 입력 �
 	- 부득이한 경우를 제외하고 Getter를 작성하지 않는 방향으로 고민
 - [X] 메소드에 넘겨주는 파람의 경우 변경 가능성이 없다면 final 키워드 붙임으로서 의도 노출
 	- 컨트롤러 메소드, 모델 메소드의 인자에 final 키워드 작성
-- [ ] 로거 적용
 - [X] 의도를 명확히 알고 쓰기 위해 Lombok 등 의존성 미추가
+- [ ] 로거 적용
 - [ ] 입력 화면 작성
 
 ##### [목차로 이동](#목차)
