@@ -31,6 +31,10 @@ public class ErrorResult {
         return new ErrorResult(errorCode);
     }
 
+    public static ErrorResult of(final ErrorCode errorCode, final List<FieldError> errors) {
+        return new ErrorResult(errorCode, errors);
+    }
+
     public static ErrorResult of(final ErrorCode errorCode, final BindingResult bindingResult) {
         return new ErrorResult(errorCode, FieldError.of(bindingResult));
     }
@@ -51,7 +55,7 @@ public class ErrorResult {
         return errors;
     }
 
-    static class FieldError {
+    public static class FieldError {
         private String field;
         private String value;
         private String reason;
@@ -62,6 +66,14 @@ public class ErrorResult {
             this.reason = reason;
         }
 
+        // 비컨트롤러단의 경우 BindingResult 미존재
+        public static List<FieldError> of(final String field, final String value, final String reason) {
+            List<FieldError> fieldErrors = new ArrayList<>();
+            fieldErrors.add(new FieldError(field, value, reason));
+            return fieldErrors;
+        }
+
+        // 컨트롤러단
         private static List<FieldError> of(final BindingResult bindingResult) {
             final List<org.springframework.validation.FieldError> fieldErrors = bindingResult.getFieldErrors();
             return fieldErrors.stream()

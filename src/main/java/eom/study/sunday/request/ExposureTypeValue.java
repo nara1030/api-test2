@@ -1,7 +1,10 @@
 package eom.study.sunday.request;
 
+import eom.study.sunday.exception.NoInputDataException;
+import eom.study.sunday.response.ErrorCode;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.springframework.validation.BindingResult;
 
 import java.io.IOException;
 
@@ -31,7 +34,7 @@ public enum ExposureTypeValue implements ExposureType {
         try {
             document = Jsoup.connect(url).get();
         } catch (IOException e) {
-            e.printStackTrace(); // 예외처리 필요
+            throw new NoInputDataException(ErrorCode.NOT_FOUND_URL, url);
         }
 
         return document;
